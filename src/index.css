@@ -23,3 +23,22 @@
   --font-inter: "Inter", sans-serif;
 
 }
+
+.navbarBottom{
+  position: relative;
+  transition: all 0.3s linear;
+}
+.navbarBottom::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: var(--color-Text2);
+  transition: all 0.3s linear;
+}
+
+.navbarBottom:hover::after{
+  width: 100%;
+}
