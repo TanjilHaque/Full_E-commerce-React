@@ -42,3 +42,14 @@
 .navbarBottom:hover::after{
   width: 100%;
 }
+
+.footerTextSubHeading{
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  font-size: 20px;
+}
+.footerTextList{
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 16px;
+}
