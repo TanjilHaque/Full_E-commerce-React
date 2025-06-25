@@ -9,6 +9,13 @@ import iphone_discount from "../assets/bannerImages/iphone_discount.png";
 import sale_and_box from "../assets/bannerImages/sale_and_box.jpg";
 
 const BannerSliderImage = () => {
+  const bannerImages = [
+    { id: 0, name: brush_products },
+    { id: 1, name: ceramic_products },
+    { id: 2, name: herbal_products },
+    { id: 3, name: iphone_discount },
+    { id: 4, name: sale_and_box },
+  ];
   const settings = {
     dots: true,
     infinite: true,
@@ -19,41 +26,16 @@ const BannerSliderImage = () => {
   return (
     <div>
       <Slider {...settings}>
-        <div className="text-center">
-          <img
-            className="w-[892px] h-[344px] bg-cover"
-            src={brush_products}
-            alt="brush_products"
-          />
-        </div>
-        <div className="text-center">
-          <img
-            className="w-[892px] h-[344px] bg-cover"
-            src={ceramic_products}
-            alt="ceramic_products"
-          />
-        </div>
-        <div className="text-center">
-          <img
-            className="w-[892px] h-[344px] bg-cover"
-            src={herbal_products}
-            alt="herbal_products"
-          />
-        </div>
-        <div className="text-center">
-          <img
-            className="w-[892px] h-[344px] bg-cover"
-            src={iphone_discount}
-            alt="iphone_discount"
-          />
-        </div>
-        <div className="text-center">
-          <img
-            className="w-[892px] h-[344px] bg-cover"
-            src={sale_and_box}
-            alt="sale_and_box"
-          />
-        </div>
+        {bannerImages.map((item) => (
+          <div className="text-center">
+            <img
+              className="w-full h-[344px] bg-cover"
+              key={item.id}
+              src={item.name}
+              alt={item.name}
+            />
+          </div>
+        ))}
       </Slider>
     </div>
   );
