@@ -21,15 +21,14 @@
   /* =============fonts============= */
   --font-poppins: "Poppins", sans-serif;
   --font-inter: "Inter", sans-serif;
-
 }
 
-.navbarBottom{
+.navbarBottom {
   position: relative;
   transition: all 0.3s linear;
 }
-.navbarBottom::after{
-  content: '';
+.navbarBottom::after {
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -39,17 +38,21 @@
   transition: all 0.3s linear;
 }
 
-.navbarBottom:hover::after{
+.navbarBottom:hover::after {
   width: 100%;
 }
 
-.footerTextSubHeading{
+.footerTextSubHeading {
   font-family: var(--font-poppins);
   font-weight: 500;
   font-size: 20px;
 }
-.footerTextList{
+.footerTextList {
   font-family: var(--font-poppins);
   font-weight: 400;
   font-size: 16px;
 }
+
+/* ==================================Slider CSS==================================== */
+
+/* ==================================Slider CSS==================================== */

@@ -1,16 +1,20 @@
-import React from 'react'
-import TopBar from '../commonComponents/TopBar'
-import Navbar from '../commonComponents/Navbar'
-import Footer from '../commonComponents/Footer'
+import React from "react";
+import TopBar from "../commonComponents/TopBar";
+import Navbar from "../commonComponents/Navbar";
+import Footer from "../commonComponents/Footer";
+import BannerListWithDropdown from "../bannerComponents/BannerListWithDropdown";
+import BannerSliderImage from "../bannerComponents/BannerSliderImage";
 
 const HomePage = () => {
   return (
     <div>
-        <TopBar></TopBar>
+      {/* <TopBar></TopBar>
         <Navbar></Navbar>
-        <Footer></Footer>
+        <Footer></Footer> */}
+      {/* <BannerListWithDropdown></BannerListWithDropdown> */}
+      <BannerSliderImage></BannerSliderImage>
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
