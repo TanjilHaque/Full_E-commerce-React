@@ -1,7 +1,7 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
 
-const StarReviewsPerStar = ({ rating = 4, maxStars = 5, size = 18 }) => {
+const StarReviews = ({ rating = 4, maxStars = 5, size = 18 }) => {
   const starColor = "#FFAD33";
   const emptyColor = "#E5E7EB";
 
@@ -50,4 +50,4 @@ const StarReviewsPerStar = ({ rating = 4, maxStars = 5, size = 18 }) => {
   );
 };
 
-export default StarReviewsPerStar;
+export default StarReviews;

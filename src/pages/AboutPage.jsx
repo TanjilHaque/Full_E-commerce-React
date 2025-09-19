@@ -10,10 +10,10 @@ const AboutPage = () => {
       <BreadCrumb></BreadCrumb>
       <div className="container mx-auto">
         <div className="flex">
-          <div className="w-[30%] bg-red-400">
+          <div className="w-[30%]">
             <LeftSideCategory></LeftSideCategory>
           </div>
-          <div className="w-[70%] bg-blue-500">
+          <div className="w-[70%]">
             <PageProdcts></PageProdcts>
           </div>
         </div>
