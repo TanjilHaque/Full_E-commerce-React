@@ -12,7 +12,7 @@ const Banner = () => {
       <div className="w-[22%] border-r border-[#b2b2b2] pt-[40px]">
         <BannerListWithDropdown></BannerListWithDropdown>
       </div>
-      <div className="w-[78%] pt-[40px]">
+      <div className="w-[78%] pt-[40px] z-10">
         <BannerSliderImage></BannerSliderImage>
       </div>
     </div>

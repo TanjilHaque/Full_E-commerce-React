@@ -123,3 +123,66 @@
   content: "" !important;
 }
 /* ==================================Slider CSS==================================== */
+
+/* ==================================Heading CSS==================================== */
+.subTitle {
+  position: relative;
+}
+.subTitle::before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: var(--color-Secondary2);
+  top: -10px;
+  left: -40px;
+}
+
+/* ==================================Heading CSS==================================== */
+
+/* ==================================Timer CSS==================================== */
+.timeItem {
+  position: relative;
+}
+.timeItem::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+  background-color: var(--color-HoverButtonPink);
+  top: 22px;
+  right: -15px;
+}
+.timeItem:last-child::before {
+  display: none;
+}
+.timeItem::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+  background-color: var(--color-HoverButtonPink);
+  bottom: 10px;
+  right: -15px;
+}
+.timeItem:last-child::after {
+  display: none;
+}
+/* ==================================Timer CSS==================================== */
+
+/* ==================================Cart CSS==================================== */
+
+.addToCartBtn {
+  opacity: 0;
+  transition: all 0.3s linear;
+  bottom: -10px;
+}
+.imageContainer:hover .addToCartBtn {
+  bottom: 0;
+  opacity: 1;
+}
+
+/* ==================================Cart CSS==================================== */

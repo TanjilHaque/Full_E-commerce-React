@@ -1,13 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router"; // Ensure this is from 'react-router-dom'
 import { CiSearch } from "react-icons/ci";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { IoCartOutline } from "react-icons/io5";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri"; // Import icons for hamburger menu
+import { FiUser } from "react-icons/fi";
+import UserDropDown from "../ui/UserDropDown";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const [isAccountDropDownOpen, setIsAccountDropDownOpen] = useState(false);
+  const handleUserAccountBtn = () => {
+    setIsAccountDropDownOpen(!isAccountDropDownOpen);
+  };
+  const userDropDownRef = useRef(null);
+  useEffect(() => {
+    const clickOutside = (event) => {
+      if (
+        userDropDownRef.current &&
+        !userDropDownRef.current.contains(event.target)
+      ) {
+        setIsAccountDropDownOpen(false);
+      }
+    };
+    //attach listener
+    document.addEventListener("mousedown", clickOutside);
+    //remove listener
+    return () => {
+      document.removeEventListener("mousedown", clickOutside);
+    };
+  }, []);
   const navItem = [
     { id: 1, item: "Home", name: "home" },
     { id: 2, item: "Contact", name: "contact" },
@@ -43,7 +65,9 @@ const Navbar = () => {
         </div>
 
         {/* Right Section: Search (Icon only for mobile), Cart, Heart (Desktop only), Hamburger (Mobile only) */}
-        <div className="flex items-center gap-x-3 md:gap-x-6"> {/* Adjusted gap-x */}
+        <div className="flex items-center gap-x-3 md:gap-x-6">
+          {" "}
+          {/* Adjusted gap-x */}
           {/* Search Input (Desktop) vs Search Icon (Mobile) */}
           <div className="hidden md:flex items-center bg-Secondary pr-[12px] pl-[20px] py-[7px] rounded-md">
             <input
@@ -55,22 +79,29 @@ const Navbar = () => {
               <CiSearch />
             </span>
           </div>
-          
           {/* Search Icon for Mobile */}
-          <span className="md:hidden text-[24px] cursor-pointer text-Text2"> {/* Adjusted icon size */}
+          <span className="md:hidden text-[24px] cursor-pointer text-Text2">
+            {" "}
+            {/* Adjusted icon size */}
             <CiSearch />
           </span>
-
           {/* Heart Icon (Desktop Only - moved from here to mobile menu for small screens) */}
           <span className="hidden md:block text-[28px] md:text-[32px] cursor-pointer text-Text2">
             <IoIosHeartEmpty />
           </span>
-
           {/* Cart Icon (Always visible, adjusted size) */}
-          <span className="text-[24px] md:text-[32px] cursor-pointer text-Text2"> {/* Adjusted icon size */}
+          <span className="text-[24px] md:text-[32px] cursor-pointer text-Text2">
+            {" "}
+            {/* Adjusted icon size */}
             <IoCartOutline />
           </span>
-
+          <span
+            onClick={handleUserAccountBtn}
+            className="text-[12px] p-3 rounded-full bg-Secondary2 md:text-[24px] cursor-pointer text-white"
+          >
+            {/* Adjusted icon size */}
+            <FiUser />
+          </span>
           {/* Hamburger Menu Icon (Mobile Only) */}
           <div className="md:hidden">
             <button
@@ -86,7 +117,9 @@ const Navbar = () => {
       {/* Mobile Navigation Menu (conditionally rendered below the main navbar) */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white shadow-lg py-4 border-t border-Button">
-          <ul className="flex flex-col items-start px-4 space-y-4"> {/* Aligned items to start, added px */}
+          <ul className="flex flex-col items-start px-4 space-y-4">
+            {" "}
+            {/* Aligned items to start, added px */}
             {navItem.map((nav) => (
               <NavLink
                 className="cursor-pointer font-poppins text-Text2 text-[16px] navbarBottom hover:underline w-full py-2" // Added w-full py-2 for better tap area
@@ -112,6 +145,15 @@ const Navbar = () => {
                 />
             </li> */}
           </ul>
+        </div>
+      )}
+      {/* Account drop down menu */}
+      {isAccountDropDownOpen && (
+        <div
+          ref={userDropDownRef}
+          className="absolute z-20 top-[16%] right-[8.2%]"
+        >
+          <UserDropDown></UserDropDown>
         </div>
       )}
     </div>
