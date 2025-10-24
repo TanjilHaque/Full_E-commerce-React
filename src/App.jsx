@@ -13,6 +13,7 @@ import CustomerService from "./components/homeComponents/CustomerService";
 import BreadCrumb from "./components/commonComponents/BreadCrumb";
 import AboutPage from "./pages/AboutPage";
 import ProductDetails from "./components/productDetails/ProductDetails";
+import SignUpPage from "./pages/SignUpPage";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route index element={<HomePage />}></Route>
           <Route path="/about" element={<AboutPage />}></Route>
           <Route path="/product-details" element={<ProductDetails />}></Route>
+          <Route path="/sign-up" element={<SignUpPage />}></Route>
         </Route>
       </Routes>
     </div>

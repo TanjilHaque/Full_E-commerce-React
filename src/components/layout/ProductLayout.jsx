@@ -62,10 +62,7 @@ const ProductLayout = ({
     <div>
       {/* Heading & Timer */}
       <div className="flex justify-start items-baseline-last gap-[90px]">
-        <Heading
-          subtitle={subtitle || "Sub Title"}
-          title={title || "Title Part"}
-        />
+        <Heading subtitle={subtitle || null} title={title || null} />
         {/* props in seconds */}
         {timeStamp && <TimeLimit initialSeconds={313453} />}
       </div>

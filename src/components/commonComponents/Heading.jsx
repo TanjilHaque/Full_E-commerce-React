@@ -7,13 +7,13 @@ const Heading = ({ subtitle, title }) => {
         className="subTitle font-poppins font-semibold text-[16px]
        leading-[20px] text-Secondary2 ml-[40px]"
       >
-        {subtitle || "Today's"}
+        {subtitle || null}
       </span>
       <span
         className="title font-inter font-semibold text-[36px]
        leading-[48px] tracking-[4px] text-Text2"
       >
-        {title || "Flash Sales"}
+        {title || null}
       </span>
     </div>
   );
