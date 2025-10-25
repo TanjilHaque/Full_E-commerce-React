@@ -24,7 +24,7 @@ const BannerSliderImage = () => {
     slidesToScroll: 1,
   };
   return (
-    <div>
+    <div className="bannerSlider">
       <Slider {...settings}>
         {bannerImages.map((item) => (
           <div className="text-center">

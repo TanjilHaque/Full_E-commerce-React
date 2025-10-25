@@ -14,6 +14,10 @@ import BreadCrumb from "./components/commonComponents/BreadCrumb";
 import AboutPage from "./pages/AboutPage";
 import ProductDetails from "./components/productDetails/ProductDetails";
 import SignUpPage from "./pages/SignUpPage";
+import LoginPage from "./pages/LoginPage";
+import ErrorPage from "./pages/ErrorPage";
+import ContactPage from "./pages/ContactPage";
+import OurStoryPage from "./pages/OurStoryPage";
 
 const App = () => {
   return (
@@ -24,6 +28,10 @@ const App = () => {
           <Route path="/about" element={<AboutPage />}></Route>
           <Route path="/product-details" element={<ProductDetails />}></Route>
           <Route path="/sign-up" element={<SignUpPage />}></Route>
+          <Route path="/login" element={<LoginPage />}></Route>
+          <Route path="/error" element={<ErrorPage />}></Route>
+          <Route path="/contact" element={<ContactPage />}></Route>
+          <Route path="/our-story" element={<OurStoryPage />}></Route>
         </Route>
       </Routes>
     </div>

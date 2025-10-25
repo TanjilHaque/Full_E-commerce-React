@@ -6,7 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 
 const SignUpPage = () => {
   return (
-    <div className="flex justify-center gap-[350px]">
+    <div className="flex justify-center gap-[350px] items-center">
       <div>
         <picture>
           <img src={signUpBg} alt="signUpBg" />
